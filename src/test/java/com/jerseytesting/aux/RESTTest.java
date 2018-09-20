@@ -1,18 +1,13 @@
-package com.jerseytesting.rest;
+package com.jerseytesting.aux;
 
-
-import com.jerseytesting.aux.Answer;
-import com.jerseytesting.aux.NewQueue;
-import com.jerseytesting.aux.Request;
 import com.jerseytesting.rest.RESTClientPost;
 import com.jerseytesting.rest.RESTServer;
 import org.junit.Assert;
 import org.junit.Test;
 import javax.ws.rs.core.Response;
-import java.io.IOException;
 import java.util.ArrayList;
 
-public class RESTTestRest {
+public class RESTTest {
 
     @Test
     public void testRequest(){
@@ -24,7 +19,7 @@ public class RESTTestRest {
     }
 
     @Test
-    public void testRequestAccept() throws IOException {
+    public void testRequestAccept() {
         String request = "{"+ "\"" + "a"+"\""+":"+"\""+"12"+"\""+", "+"\""+"b"+"\""+":"+"\""+"67"+"\""+", "+"\""+"op"+"\""+":"+"\""+"add"+"\""+"}";
         RESTServer server = new RESTServer();
         Response response = server.postRequest(request);
@@ -33,7 +28,7 @@ public class RESTTestRest {
     }
 
     @Test
-    public void testRequestAccept2() throws IOException {
+    public void testRequestAccept2() {
         String request = "{"+ "\"" + "a"+"\""+":"+"\""+"12"+"\""+", "+"\""+"b"+"\""+":"+"\""+"67"+"\""+", "+"\""+"op"+"\""+":"+"\""+"mult"+"\""+"}";
         RESTServer server = new RESTServer();
         Response response = server.postRequest(request);
@@ -42,7 +37,7 @@ public class RESTTestRest {
     }
 
     @Test
-    public void testRequestAccept3() throws IOException {
+    public void testRequestAccept3() {
         String request = "{"+ "\"" + "a"+"\""+":"+"\""+"12"+"\""+", "+"\""+"b"+"\""+":"+"\""+"67"+"\""+", "+"\""+"op"+"\""+":"+"\""+"div"+"\""+"}";
         RESTServer server = new RESTServer();
         Response response = server.postRequest(request);
@@ -51,7 +46,7 @@ public class RESTTestRest {
     }
 
     @Test
-    public void testRequestAccept4() throws IOException {
+    public void testRequestAccept4() {
         String request = "{"+ "\"" + "a"+"\""+":"+"\""+"12"+"\""+", "+"\""+"b"+"\""+":"+"\""+"67"+"\""+", "+"\""+"op"+"\""+":"+"\""+"avg"+"\""+"}";
         RESTServer server = new RESTServer();
         Response response = server.postRequest(request);
@@ -60,7 +55,7 @@ public class RESTTestRest {
     }
 
     @Test
-    public void testRequestAccept5() throws IOException {
+    public void testRequestAccept5() {
         String request = "{"+ "\"" + "a"+"\""+":"+"\""+"12"+"\""+", "+"\""+"b"+"\""+":"+"\""+"67"+"\""+", "+"\""+"op"+"\""+":"+"\""+"adkgukgd"+"\""+"}";
         RESTServer server = new RESTServer();
         Response response = server.postRequest(request);
@@ -69,7 +64,7 @@ public class RESTTestRest {
     }
 
     @Test
-    public void testRequestFail2() throws IOException {
+    public void testRequestFail2() {
         String request = "olyjh";
         RESTServer server = new RESTServer();
         Response response = server.postRequest(request);
@@ -78,7 +73,7 @@ public class RESTTestRest {
     }
 
     @Test
-    public void testRequestFail3() throws IOException {
+    public void testRequestFail3(){
         String request = "";
         RESTServer server = new RESTServer();
         Response response = server.postRequest(request);
@@ -86,7 +81,7 @@ public class RESTTestRest {
     }
 
     @Test
-    public void testRequestFail4() throws IOException {
+    public void testRequestFail4(){
         String request = null;
         RESTServer server = new RESTServer();
         Response response = server.postRequest(request);
@@ -94,7 +89,7 @@ public class RESTTestRest {
     }
 
     @Test
-    public void testRequestFail5() throws IOException {
+    public void testRequestFail5(){
         String request = "12345";
         RESTServer server = new RESTServer();
         Response response = server.postRequest(request);
@@ -102,7 +97,7 @@ public class RESTTestRest {
     }
 
     @Test
-    public void testRequestFail6() throws IOException {
+    public void testRequestFail6(){
         String request = " ";
         RESTServer server = new RESTServer();
         Response response = server.postRequest(request);
